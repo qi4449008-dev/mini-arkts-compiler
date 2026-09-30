@@ -1,0 +1,28 @@
+name: Mini-ArkTS Compiler Black-box Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  blackbox-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run 100 black-box test cases
+        run: python tests/run_tests.py -v
+
+      - name: Print pass rate summary
+        if: always()
+        run: |
+          echo "## 黑盒测试通过率" >> $GITHUB_STEP_SUMMARY
+          python tests/run_tests.py 2>&1 | tail -8 >> $GITHUB_STEP_SUMMARY || true

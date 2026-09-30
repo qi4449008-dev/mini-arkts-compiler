@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1;",
+    "note": "最简声明"
+  },
+  {
+    "id": 2,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "const s: string = \"hi\";",
+    "note": "const 声明"
+  },
+  {
+    "id": 3,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let x = 10;",
+    "note": "类型推断"
+  },
+  {
+    "id": 4,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1 + 2 * 3 - 4 / 2;",
+    "note": "算术优先级"
+  },
+  {
+    "id": 5,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 10 % 3;",
+    "note": "取模"
+  },
+  {
+    "id": 6,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = (1 + 2) * 3;",
+    "note": "括号改变优先级"
+  },
+  {
+    "id": 7,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = -5;",
+    "note": "一元负号"
+  },
+  {
+    "id": 8,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = true && false || true;",
+    "note": "逻辑运算"
+  },
+  {
+    "id": 9,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = 1 < 2;",
+    "note": "关系运算"
+  },
+  {
+    "id": 10,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = \"a\" == \"a\";",
+    "note": "字符串相等比较"
+  },
+  {
+    "id": 11,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = (1 + 2) * 3 == 9;",
+    "note": "复合表达式"
+  },
+  {
+    "id": 12,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "if (1 < 2) { let a: number = 1; }",
+    "note": "if 语句"
+  },
+  {
+    "id": 13,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "if (1 < 2) { let a: number = 1; } else { let a: number = 2; }",
+    "note": "if-else"
+  },
+  {
+    "id": 14,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let i: number = 0;\nwhile (i < 10) { i++; }",
+    "note": "while 循环"
+  },
+  {
+    "id": 15,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function f(x: number): number { return x + 1; }",
+    "note": "函数定义"
+  },
+  {
+    "id": 16,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function f(): number { return 42; }",
+    "note": "无参函数"
+  },
+  {
+    "id": 17,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function f(x: number): number { return x * 2; }\nlet r: number = f(3);",
+    "note": "函数调用"
+  },
+  {
+    "id": 18,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function f(x: number): number { return x + 1; }\nfunction g(x: number): number { return f(f(x)); }\nlet r: number = g(1);",
+    "note": "嵌套函数调用"
+  },
+  {
+    "id": 19,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "print(1);",
+    "note": "内建 print"
+  },
+  {
+    "id": 20,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1 + 2;\nprint(a);",
+    "note": "print 表达式结果"
+  },
+  {
+    "id": 21,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let s: string = \"line\\nbreak\";",
+    "note": "字符串转义"
+  },
+  {
+    "id": 22,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let f: number = 3.14;",
+    "note": "浮点字面量"
+  },
+  {
+    "id": 23,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = false;",
+    "note": "布尔字面量"
+  },
+  {
+    "id": 24,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1;\na = 2;",
+    "note": "重新赋值"
+  },
+  {
+    "id": 25,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1;\na = a + 1;",
+    "note": "自增赋值"
+  },
+  {
+    "id": 26,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let i: number = 0;\ni++;",
+    "note": "后缀自增"
+  },
+  {
+    "id": 27,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let i: number = 0;\n++i;",
+    "note": "前缀自增"
+  },
+  {
+    "id": 28,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Component\nstruct A {\n  @State v: number = 0\n}",
+    "note": "组件与状态变量"
+  },
+  {
+    "id": 29,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Entry\n@Component\nstruct A {\n  @State v: number = 0\n}",
+    "note": "@Entry 组件"
+  },
+  {
+    "id": 30,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Entry\n@Component\nstruct A {\n  @State v: number = 0\n  inc(): void { this.v = this.v + 1; }\n}",
+    "note": "组件方法 + this 访问"
+  },
+  {
+    "id": 31,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Entry\n@Component\nstruct A {\n  @State v: number = 0\n  build() {\n    Column() {\n      Text(\"hi\")\n    }\n  }\n}",
+    "note": "声明式 UI build"
+  },
+  {
+    "id": 32,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Entry\n@Component\nstruct A {\n  build() {\n    Column() {\n      Text(\"a\")\n      Button(\"b\")\n    }\n  }\n}",
+    "note": "多个 UI 子组件"
+  },
+  {
+    "id": 33,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Entry\n@Component\nstruct A {\n  @State n: number = 0\n  build() {\n    Button(\"add\").onClick(() => { this.n++ })\n  }\n}",
+    "note": "lambda 事件回调"
+  },
+  {
+    "id": 34,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "// 行注释\nlet a: number = 1;",
+    "note": "行注释"
+  },
+  {
+    "id": 35,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "/* 块注释 */\nlet a: number = 1;",
+    "note": "块注释"
+  },
+  {
+    "id": 36,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1;\nlet b: number = 2;\nprint(a + b);",
+    "note": "多语句"
+  },
+  {
+    "id": 37,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let sum: number = 0;\nlet i: number = 1;\nwhile (i < 5) { sum = sum + i; i++; }\nprint(sum);",
+    "note": "累加循环"
+  },
+  {
+    "id": 38,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function noop(): void { return; }",
+    "note": "void 返回"
+  },
+  {
+    "id": 39,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "{ let a: number = 1; }",
+    "note": "独立块语句"
+  },
+  {
+    "id": 40,
+    "kind": "valid",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@CrossDevice\nfunction remote(a: number): number { return a + 1; }",
+    "note": "跨设备函数"
+  },
+  {
+    "id": 41,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "",
+    "note": "空程序"
+  },
+  {
+    "id": 42,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "// 只有注释\n",
+    "note": "只有注释"
+  },
+  {
+    "id": 43,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "\n\n  \n",
+    "note": "只有空白"
+  },
+  {
+    "id": 44,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 0;",
+    "note": "零值"
+  },
+  {
+    "id": 45,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = -0.5;",
+    "note": "负浮点"
+  },
+  {
+    "id": 46,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let s: string = \"\";",
+    "note": "空字符串"
+  },
+  {
+    "id": 47,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let s: string = \"中文内容测试\";",
+    "note": "Unicode 字符串"
+  },
+  {
+    "id": 48,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 2147483647;",
+    "note": "大整数"
+  },
+  {
+    "id": 49,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx: number = 1;",
+    "note": "长标识符"
+  },
+  {
+    "id": 50,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = ((((((((((1))))))))));",
+    "note": "深括号嵌套"
+  },
+  {
+    "id": 51,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = !!true;",
+    "note": "双取反"
+  },
+  {
+    "id": 52,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let b: boolean = (1 < 2) == true;",
+    "note": "比较结果再比较"
+  },
+  {
+    "id": 53,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "if (true) { if (true) { if (true) { if (true) { if (true) { let a: number = 1; } } } } }",
+    "note": "五层嵌套 if"
+  },
+  {
+    "id": 54,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let i: number = 0;\nwhile (i < 10 && i != 5 || i > 100) { i++; }",
+    "note": "复杂布尔条件"
+  },
+  {
+    "id": 55,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "function f(a: number, b: number, c: number, d: number, e: number): number { return a + b + c + d + e; }\nlet r: number = f(1,2,3,4,5);",
+    "note": "五参数函数"
+  },
+  {
+    "id": 56,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let v0: number = 0;\nlet v1: number = 1;\nlet v2: number = 2;\nlet v3: number = 3;\nlet v4: number = 4;\nlet v5: number = 5;\nlet v6: number = 6;\nlet v7: number = 7;\nlet v8: number = 8;\nlet v9: number = 9;\nlet v10: number = 10;\nlet v11: number = 11;\nlet v12: number = 12;\nlet v13: number = 13;\nlet v14: number = 14;\nlet v15: number = 15;\nlet v16: number = 16;\nlet v17: number = 17;\nlet v18: number = 18;\nlet v19: number = 19;",
+    "note": "20 个声明"
+  },
+  {
+    "id": 57,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1 * 0;",
+    "note": "乘零"
+  },
+  {
+    "id": 58,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 1;\nlet b: number = a;\nlet c: number = b;\nprint(c);",
+    "note": "链式赋值传播"
+  },
+  {
+    "id": 59,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "@Component\nstruct A {\n  @State v: number = 0\n}\nlet z: number = 1;",
+    "note": "组件后接顶层语句"
+  },
+  {
+    "id": 60,
+    "kind": "boundary",
+    "cmd": "check",
+    "expect": 0,
+    "src": "let a: number = 100 - 50 - 20;",
+    "note": "同级左结合"
+  },
+  {
+    "id": 61,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let a# = 1;",
+    "note": "非法字符 #"
+  },
+  {
+    "id": 62,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let a: number = 1 ~ 2;",
+    "note": "非法字符 ~"
+  },
+  {
+    "id": 63,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let s: string = \"abc;",
+    "note": "字符串未闭合"
+  },
+  {
+    "id": 64,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "/* 未闭合注释\nlet a: number = 1;",
+    "note": "块注释未闭合"
+  },
+  {
+    "id": 65,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "@Foo\nstruct A { }",
+    "note": "未知装饰器"
+  },
+  {
+    "id": 66,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let a: number = 1; ^",
+    "note": "非法字符 ^"
+  },
+  {
+    "id": 67,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let s: string = 'abc;",
+    "note": "单引号未闭合"
+  },
+  {
+    "id": 68,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let a: number = 1; \\",
+    "note": "非法字符反斜杠"
+  },
+  {
+    "id": 69,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let $a#b: number = 1;",
+    "note": "标识符含非法字符"
+  },
+  {
+    "id": 70,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 1,
+    "src": "let s: string = \"a\\\";",
+    "note": "转义异常结束"
+  },
+  {
+    "id": 71,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: number = 1",
+    "note": "缺少分号"
+  },
+  {
+    "id": 72,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "function f(): number { return 1;",
+    "note": "函数体未闭合"
+  },
+  {
+    "id": 73,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "if (1 < 2 { }",
+    "note": "条件括号不匹配"
+  },
+  {
+    "id": 74,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let = 5;",
+    "note": "缺少变量名"
+  },
+  {
+    "id": 75,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: = 1;",
+    "note": "缺少类型名"
+  },
+  {
+    "id": 76,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "if 1 < 2 { }",
+    "note": "if 缺少括号"
+  },
+  {
+    "id": 77,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "while { }",
+    "note": "while 缺少条件"
+  },
+  {
+    "id": 78,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "function f() ",
+    "note": "函数缺少函数体"
+  },
+  {
+    "id": 79,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: number = ;",
+    "note": "表达式缺失"
+  },
+  {
+    "id": 80,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: number = 1 + ;",
+    "note": "右操作数缺失"
+  },
+  {
+    "id": 81,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "}",
+    "note": "多余右花括号"
+  },
+  {
+    "id": 82,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: number = 1;\n{",
+    "note": "块未闭合"
+  },
+  {
+    "id": 83,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "print(1",
+    "note": "调用缺右括号"
+  },
+  {
+    "id": 84,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "function (): number { return 1; }",
+    "note": "函数缺少名字"
+  },
+  {
+    "id": 85,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 2,
+    "src": "let a: number = 1;\nif (a > 0) { } else",
+    "note": "else 缺少语句"
+  },
+  {
+    "id": 86,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let s: string = 42;",
+    "note": "number 赋给 string"
+  },
+  {
+    "id": 87,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let a: number = 1;\nlet b = a + \"x\";",
+    "note": "number 与 string 隐式拼接"
+  },
+  {
+    "id": 88,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let a: number = 1;\nlet b = \"x\" + a;",
+    "note": "string 与 number 隐式拼接"
+  },
+  {
+    "id": 89,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "if (1) { }",
+    "note": "number 作条件"
+  },
+  {
+    "id": 90,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "while (\"s\") { }",
+    "note": "string 作 while 条件"
+  },
+  {
+    "id": 91,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "undefined_fn(1);",
+    "note": "调用未定义函数"
+  },
+  {
+    "id": 92,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "print(zzz);",
+    "note": "使用未声明变量"
+  },
+  {
+    "id": 93,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let a: number = 1;\nlet a: number = 2;",
+    "note": "重复声明"
+  },
+  {
+    "id": 94,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "function f(x: number): number { return x; }\nf(1, 2);",
+    "note": "实参个数不符"
+  },
+  {
+    "id": 95,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "function f(x: number): number { return x; }\nf(\"s\");",
+    "note": "实参类型不符"
+  },
+  {
+    "id": 96,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "function f(): number { return \"s\"; }",
+    "note": "返回类型不匹配"
+  },
+  {
+    "id": 97,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let a: foo = 1;",
+    "note": "未知类型"
+  },
+  {
+    "id": 98,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "@State let v: number = 0;",
+    "note": "@State 在组件外"
+  },
+  {
+    "id": 99,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "@Entry let a: number = 1;",
+    "note": "装饰器修饰变量"
+  },
+  {
+    "id": 100,
+    "kind": "invalid",
+    "cmd": "check",
+    "expect": 3,
+    "src": "let a: number = 1;\na = \"s\";",
+    "note": "赋值类型不匹配"
+  }
+]
