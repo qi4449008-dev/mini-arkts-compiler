@@ -16,6 +16,16 @@ Python 3.9+，零第三方依赖。
 | `scheduler.py` | 分布式调度模拟（轮询 vs 最短队列优先） | 实验三 |
 | `optimizer.py` | 常量折叠/传播 + 死代码消除（循环安全：回边检测） | 实验四 |
 | `fuzzer.py` | 变异模糊测试（300 用例，0 崩溃） | 实验四 |
+| `exp5-6/` | 毕昇部署脚本、benchmark、MindSpore 融合实验 | 实验五/六 |
+
+## 实验五/六 脚本（exp5-6/）
+
+| 文件 | 用途 |
+|---|---|
+| `deploy_bisheng.sh` | 毕昇编译器部署与验证完整命令序列（WSL2 + x86 版毕昇 4.0.0） |
+| `bench.c` | GCC vs 毕昇 矩阵乘微基准 |
+| `test_fusion.py` | MindSpore 图模式下 MatMul→Add→ReLU 算子融合对照实验 |
+| `test_jit_o1.py` | 新 API `jit_config={'jit_level':'O1'}` 对照实测 |
 
 ## 命令行用法
 
